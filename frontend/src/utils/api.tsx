@@ -1,6 +1,5 @@
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
-
 export const submitCart = async (customer: any, products: any) => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -26,7 +25,8 @@ export const submitCart = async (customer: any, products: any) => {
 };
 
 export const fetchRandomCart = async () => {
-  const cartID = Math.floor(Math.random() * 50);
+  const cartID = Math.floor(Math.random() * 50) + 1;
+
   const response = await fetch(`https://dummyjson.com/carts/${cartID}`);
 
   if (response.status !== 200) {

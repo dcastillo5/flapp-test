@@ -9,7 +9,6 @@ export const Route = createFileRoute("/")({
   component: App,
 });
 
-
 function App() {
   const { cart, setCart } = useContext(CartContext);
   const [isLoading, setIsLoading] = useState(false);
@@ -24,10 +23,10 @@ function App() {
   return (
     <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
       <header className="flex flex-col items-center justify-center h-screen text-2xl text-black">
-        <h1 className="sm:text-9xl font-mono text-5xl font-semibold tracking-wide italic">Flapp</h1>
-        <h1 className="sm:text-7xl font-mono text-5xl font-semibold tracking-wide">
-          <a className="underline decoration-sky-500 decoration-wavy whitespace-nowrap"> Random e-commerce</a>
-        </h1>
+        <h1 className="lg:text-9xl font-mono text-5xl font-semibold tracking-wide italic">Flapp</h1>
+        <h2 className="text-3xl font-mono lg:text-7xl font-semibold text-center tracking-wide">
+          <a className="underline decoration-sky-500 decoration-wavy">Random e-commerce</a>
+        </h2>
         <p className="mt-8 text-2xl font-medium text-pretty text-neutral-500 text-center">
           Sorpréndete con un carrito lleno de productos al azar.
         </p>
