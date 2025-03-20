@@ -10,7 +10,7 @@ export default defineConfig({
     host: true,
     strictPort: true,
     port: 3000,
-    allowedHosts: "flapp-test.onrender.com",
+    allowedHosts: ["flapp-test.onrender.com"],
   },
   test: {
     globals: true,
