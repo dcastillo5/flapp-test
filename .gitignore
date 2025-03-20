@@ -1,0 +1,9 @@
+venv/
+node_modules/
+.env
+.DS_Store
+dist
+dist-ssr
+*.local
+.vscode
+__pycache__
