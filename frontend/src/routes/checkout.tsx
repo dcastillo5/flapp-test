@@ -2,7 +2,7 @@ import { Button } from "../components/button";
 import { Form } from "../components/form";
 import { Product } from "../components/product";
 import { CartContext } from "../providers/cart";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useContext } from "react";
 
 export const Route = createFileRoute("/checkout")({
@@ -11,6 +11,11 @@ export const Route = createFileRoute("/checkout")({
 
 function Checkout() {
   const { cart, setCart } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  if (!cart?.length) {
+    navigate({ to: "/" });
+  }
 
   return (
     <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
@@ -41,7 +46,7 @@ function Checkout() {
           <p> ${cart?.reduce((acc: number, product: any) => acc + product.discountedTotal, 0).toFixed(2)}</p>
         </div>
       </div>
-      <div className="flex items-start flex-col lg:flex-row  px-4">
+      <div className="flex items-start flex-col lg:flex-row px-4">
         <div className="space-y-2 lg:w-1/2 w-full">
           {cart?.map((product: any) => <Product key={product.id} product={product} />)}
           <div className="flex justify-center mb-6 w-full">
