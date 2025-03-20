@@ -73,7 +73,7 @@ export const Form = () => {
   };
 
   return (
-    <form className="flex flex-col space-y-4 m-10 w-1/2 place-self-center" onSubmit={handleSubmit}>
+    <form className="flex flex-col space-y-4 m-10 lg:w-1/2 w-2/3 place-self-center" onSubmit={handleSubmit}>
       <div className="flex lg:flex-row lg:space-x-2 w-full flex-col space-y-2">
         <TextInput label="Nombre" name="name" />
         <TextInput label="Apellido" name="last_name" />
