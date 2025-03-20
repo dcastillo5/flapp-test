@@ -1,10 +1,20 @@
-# Flapp Test
+# Flapp Test 🚛
+
+Este es un monorepo, contiene el frontend y el backend de la aplicación. Ambos servicios fueron dockerizados, por lo tanto, para correr la aplicación basta con tener instalado Docker y Docker Compose y ejecutar los siguientes comandos:
+
+```bash
+docker-compose build
+docker-compose up
+```
+Se puede acceder al frontend en `http://localhost:3000` y al backend en `http://localhost:8000`.
+
+De igual manera, más abajo están las instrucciones para correr los servicios de manera independiente fuera de Docker.
 
 ## Estructura
 
 ### Frontend 🎨
 
-Se ubica en la carpeta `frontend`. El frontend fue desarrollado con TypeScript, utilizando React, bun como administrador de paquetes, tanstack-router para el manejo de rutas y TailwindCSS para el estilo. El proyecto se inicializó utilizando un template de [tsrouter-app](https://tanstack.com/router/latest/docs/framework/react/quick-start#scaffolding-your-first-tanstack-router-project) que incluía las principales dependencias y configuraciones para el desarrollo.
+Se ubica en la carpeta `frontend`. El frontend fue desarrollado con TypeScript, utilizando React, bun como administrador de paquetes, tanstack-router para el manejo de rutas y TailwindCSS para el estilo. El proyecto se inicializó utilizando un template de [tsrouter-app](https://tanstack.com/router/latest/docs/framework/react/quick-start#scaffolding-your-first-tanstack-router-project) que incluía las principales dependencias y configuraciones.
 
 #### Set up
 
@@ -63,7 +73,7 @@ fastapi dev app/main.py
 
 En el desarrollo de la aplicación se asumieron los siguientes supuestos:
 
-- En el backend, a la API dummyjson unicamente se le hace la consulta paginada de 10 en 10. No se utilizan endpoints para obtener la información de los productos de manera individual.
+- En el backend, a la API dummyjson únicamente se le hace la consulta paginada de 10 en 10. No se utilizan endpoints para obtener la información de los productos de manera individual.
 
 - El precio de la tarifa de uder viene dada por `fee` en USD y el precio de la tarifa de traeloYa viene dada por `pricing.total` en CLP. Para poder comparar los precios y estandarizar la moneda, se convierte el precio de traeloYa a USD. Para simplificar la conversión se asume que 1 USD = 922,74 CLP.
 
