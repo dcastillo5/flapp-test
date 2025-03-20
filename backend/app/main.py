@@ -34,3 +34,7 @@ def process_cart(cart: Cart):
 
     finally:
         print("\n===========================")
+
+@app.get("/")
+def health():
+    return {"status": "ok"}

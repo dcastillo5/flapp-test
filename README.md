@@ -14,17 +14,19 @@ Dentro de la carpeta `frontend` hacer los siguientes pasos:
 
 1. Crear un archivo `.env` con las variables de entorno del archivo `.env.example`.
 
-2. Instalar las dependencias correr el siguiente comando:
+2. Instalar las dependencias con el siguiente comando:
 
 ```bash
 bun install
 ```
 
-3. Correr el frontend correr el siguiente comando:
+3. Correr el frontend con el siguiente comando:
 
 ```bash
-bun dev
+bun run start
 ```
+
+4. El frontend estará disponible en `http://localhost:3000`.
 
 ### Backend 💻
 
@@ -43,17 +45,19 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-3. Instalar las dependencias correr el siguiente comando:
+3. Instalar las dependencias con el siguiente comando:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Correr el backend correr el siguiente comando:
+4. Correr el backend con el siguiente comando:
 
 ```bash
 fastapi dev app/main.py
 ```
+
+5. El backend estará disponible en `http://127.0.0.1:8000`.
 
 ## Supuestos
 
