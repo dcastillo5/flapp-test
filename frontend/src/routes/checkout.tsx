@@ -44,7 +44,7 @@ function Checkout() {
       <div className="flex items-start flex-col lg:flex-row  px-4">
         <div className="space-y-2 lg:w-1/2 w-full">
           {cart?.map((product: any) => <Product key={product.id} product={product} />)}
-          <div className="place-self-center mb-6">
+          <div className="flex justify-center mb-6 w-full">
             <Link to="/">
               <Button
                 label="Limpiar carrito"
@@ -55,7 +55,7 @@ function Checkout() {
             </Link>
           </div>
         </div>
-        <div className="space-y-2 lg:w-1/2 w-full">
+        <div className="space-y-2 lg:w-1/2 w-full flex flex-col justify-center">
           <h1 className="place-self-center text-2xl font-semibold tracking-wide">Información de envío</h1>
           <Form />
         </div>
