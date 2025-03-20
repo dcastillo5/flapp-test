@@ -1,4 +1,5 @@
-const REACT_APP_BACKEND_URL = import.meta.env.BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 
 export const submitCart = async (customer: any, products: any) => {
   const headers = new Headers();
@@ -10,7 +11,7 @@ export const submitCart = async (customer: any, products: any) => {
     body: JSON.stringify({ customer_data: customer, products }),
   };
 
-  const response = await fetch(`${REACT_APP_BACKEND_URL}/api/cart`, requestOptions);
+  const response = await fetch(`${BACKEND_URL}/api/cart`, requestOptions);
 
   if (response.status !== 200) {
     throw new Error("No hay envíos disponibles :(");
