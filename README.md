@@ -1,6 +1,6 @@
 # Flapp Test 🚛
 
-Este es un monorepo, contiene el frontend y el backend de la aplicación. Ambos servicios fueron dockerizados, por lo tanto, para correr la aplicación basta con tener instalado Docker y Docker Compose y ejecutar los siguientes comandos:
+Este es un monorepo, contiene el frontend y el backend de la aplicación. Ambos servicios están dockerizados, por lo tanto, para correr la aplicación solo se necesita tener instalado Docker y Docker Compose, y ejecutar los siguientes comandos:
 
 ```bash
 docker-compose build
@@ -8,19 +8,25 @@ docker-compose up
 ```
 Se puede acceder al frontend en `http://localhost:3000` y al backend en `http://localhost:8000`.
 
-De igual manera, más abajo están las instrucciones para correr los servicios de manera independiente fuera de Docker.
+De igual manera, se pueden correr los servicios de manera independiente fuera de Docker. Las instrucciones se encuentran en el Set up de cada servicio.
 
 ## Estructura
 
 ### Frontend 🎨
 
-Se ubica en la carpeta `frontend`. El frontend fue desarrollado con TypeScript, utilizando React, bun como administrador de paquetes, tanstack-router para el manejo de rutas y TailwindCSS para el estilo. El proyecto se inicializó utilizando un template de [tsrouter-app](https://tanstack.com/router/latest/docs/framework/react/quick-start#scaffolding-your-first-tanstack-router-project) que incluía las principales dependencias y configuraciones.
+Se ubica en la carpeta `frontend/`. Fue desarrollado con:
+- TypeScript y React
+- Bun como administrador de paquetes, 
+- Tanstack Router para el manejo de rutas
+- TailwindCSS para el estilo. 
+
+El proyecto se inicializó utilizando el template de [tsrouter-app](https://tanstack.com/router/latest/docs/framework/react/quick-start#scaffolding-your-first-tanstack-router-project) que incluye las principales dependencias y configuraciones.
 
 #### Set up
 
-Para correr el frontend es necesario tener instalado node y bun. Para instalar bun se puede seguir la [guía de instalación](https://bun.sh/docs/installation#installing).
+Para correr el frontend es necesario tener instalado node y bun([guía de instalación](https://bun.sh/docs/installation#installing)).
 
-Dentro de la carpeta `frontend` hacer los siguientes pasos:
+Dentro de la carpeta `frontend` seguir los siguientes pasos:
 
 1. Crear un archivo `.env` con las variables de entorno del archivo `.env.example`.
 
@@ -36,11 +42,14 @@ bun install
 bun run start
 ```
 
-4. El frontend estará disponible en `http://localhost:3000`.
+4. Acceder al frontend en `http://localhost:3000`.
 
 ### Backend 💻
 
-Se ubica en la carpeta `backend`. El backend fue desarrollado en Python utilizando FastAPI con pydantic para la validación de los datos.
+Se ubica en la carpeta `backend/`. Fue desarrollado con:
+- Python 
+- FastAPI 
+- Pydantic para la validación de los datos.
 
 #### Set up
 
@@ -67,18 +76,18 @@ pip install -r requirements.txt
 fastapi dev app/main.py
 ```
 
-5. El backend estará disponible en `http://127.0.0.1:8000`.
+5. Acceder al backend en `http://127.0.0.1:8000`.
 
 ## Supuestos
 
-En el desarrollo de la aplicación se asumieron los siguientes supuestos:
+En el desarrollo de la aplicación se asumio que:
 
-- En el backend, a la API dummyjson únicamente se le hace la consulta paginada de 10 en 10. No se utilizan endpoints para obtener la información de los productos de manera individual.
+- En el backend, la API dummyjson únicamente es consultada con paginación de 10 en 10. No se utilizan endpoints para obtener la información de los productos de manera individual.
 
 - El precio de la tarifa de uder viene dada por `fee` en USD y el precio de la tarifa de traeloYa viene dada por `pricing.total` en CLP. Para poder comparar los precios y estandarizar la moneda, se convierte el precio de traeloYa a USD. Para simplificar la conversión se asume que 1 USD = 922,74 CLP.
 
-- Todos los precios obtenidos se truncan a 2 decimales.
+- Todos los precios obtenidos se truncan a dos decimales.
 
-- Independiente del error que envío el backend, se muestra el mensaje de fallo "No hay envíos disponibles"
+- Independiente del error (400) que envie el backend, siempre se muestra el mensaje de fallo "No hay envíos disponibles"
 
 - La vista de checkout muestra los detalles del carrito y permite ingresar los datos de envío del comprador.
